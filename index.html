@@ -37,7 +37,7 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 0.7rem; /* espacio entre logo y texto */
+      gap: 0.7rem;
     }
 
     .logo-text {
@@ -46,7 +46,6 @@
       color: #fff;
       letter-spacing: 0.5px;
     }
-
 
     nav img {
       height: 50px;
@@ -57,6 +56,7 @@
       display: flex;
       gap: 2rem;
       list-style: none;
+      transition: all 0.3s ease;
     }
 
     nav ul li a {
@@ -68,6 +68,36 @@
 
     nav ul li a:hover {
       color: #e23c3c;
+    }
+
+    /* --- Botón Hamburguesa --- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
     }
 
     /* --- Hero --- */
@@ -168,7 +198,37 @@
       font-weight: bold;
     }
 
+    /* --- Responsive --- */
     @media (max-width: 900px) {
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(11, 11, 20, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        text-align: center;
+        margin: 0.8rem 0;
+      }
+
       .hero {
         flex-direction: column;
         text-align: center;
@@ -190,17 +250,23 @@
 
   <!-- Navbar -->
   <nav>
-  <div class="logo-container">
-    <img src="images/logo.png" alt="Logo BarberApp" />
-    <span class="logo-text">Trim Team</span>
-  </div>
-  <ul>
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#app">App</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo BarberApp" />
+      <span class="logo-text">Trim Team</span>
+    </div>
 
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul id="nav-menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#app">App</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero -->
   <section class="hero" id="inicio">
@@ -226,6 +292,16 @@
   <footer id="contacto">
     <p>© 2025 <span>TrimTeamApp</span> | Todos los derechos reservados 💈</p>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
