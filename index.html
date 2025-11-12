@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrimTeamApp - Tu barbería digital</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #0b0b14, #101522);
+      color: #fff;
+    }
+
+    /* --- Navbar --- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem 4rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem; /* espacio entre logo y texto */
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+
+    nav img {
+      height: 50px;
+      border-radius: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e23c3c;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10rem 8%;
+      background: radial-gradient(circle at top right, #101522, #0b0b14);
+    }
+
+    .hero-content {
+      max-width: 50%;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .hero-content h1 span {
+      color: #e23c3c;
+    }
+
+    .hero-content p {
+      margin: 1.5rem 0;
+      color: #dcdcdc;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .hero-content button {
+      background: linear-gradient(90deg, #e23c3c, #2a5cd4);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-content button:hover {
+      transform: scale(1.05);
+    }
+
+    .hero img {
+      width: 38%;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    /* --- Mockups Section --- */
+    .mockups {
+      text-align: center;
+      padding: 6rem 5%;
+      background: linear-gradient(180deg, #101522, #0b0b14);
+    }
+
+    .mockups h2 {
+      font-size: 2.3rem;
+      margin-bottom: 3rem;
+      color: #f8f8f8;
+    }
+
+    .phones {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .phones img {
+      width: 270px;
+      height: auto;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(226, 60, 60, 0.25);
+      transition: transform 0.3s;
+    }
+
+    .phones img:hover {
+      transform: translateY(-10px);
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.95rem;
+      color: #c2c2c2;
+    }
+
+    footer span {
+      color: #e23c3c;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 8rem 5%;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .hero img {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Logo BarberApp" />
+    <span class="logo-text">Trim Team</span>
+  </div>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#app">App</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Tu Barbería <span>Digital</span></h1>
+      <p>TrimTeamApp conecta a barberos y clientes en un solo lugar. Reserva citas, gestiona tu barbería y potencia tu estilo con una app moderna e intuitiva.</p>
+      <button>Descargar App</button>
+    </div>
+    <img src="images/mockup-principal.png" alt="Vista principal de la app" />
+  </section>
+
+  <!-- Mockups -->
+  <section class="mockups" id="app">
+    <h2>Explora la experiencia BarberApp</h2>
+    <div class="phones">
+      <img src="images/mockup1.png" alt="Pantalla de reservas" />
+      <img src="images/mockup2.png" alt="Pantalla de servicios" />
+      <img src="images/mockup3.png" alt="Pantalla de perfil de barbero" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacto">
+    <p>© 2025 <span>TrimTeamApp</span> | Todos los derechos reservados 💈</p>
+  </footer>
+
+</body>
+</html>
